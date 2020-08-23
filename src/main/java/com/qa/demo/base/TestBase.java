@@ -9,6 +9,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 public class TestBase {
 
@@ -37,7 +38,18 @@ public class TestBase {
             System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") +
                     "/src/main/java/com/qa/demo/data/chromedriver");
             driver = new ChromeDriver();
-        } else {
+        }
+        else if(BrowserName.equals("chromeheadless")) {
+            ChromeOptions chromeOptions = new ChromeOptions();
+            System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+
+                    "/src/main/java/com/qa/demo/data/chromedriver")	;
+            chromeOptions.addArguments("--headless");
+            chromeOptions.addArguments("--disable-gpu");
+            chromeOptions.addArguments("--window-size=1920x1080");
+            driver=new ChromeDriver(chromeOptions);
+            // log.info("launching Chrome Broswer");
+        }
+        else {
             System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") +
                     "/src/main/java/com/qa/demo/data/geckodriver.exe");
             driver = new FirefoxDriver();
