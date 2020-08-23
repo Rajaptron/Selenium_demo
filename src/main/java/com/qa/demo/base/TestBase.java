@@ -19,8 +19,11 @@ public class TestBase {
     public TestBase() {
         try {
             prop = new Properties();
+            /*
             FileInputStream ip = new FileInputStream(System.getProperty("user.dir") +
-                    "/src/main/java/com/qa/demo/config/config.properties");
+                    "/src/main/java/com/qa/demo/config/config.properties");*/
+            FileInputStream ip = new FileInputStream(System.getProperty("user.dir") +
+                    "\\src\\main\\java\\com\\qa\\demo\\config\\config.properties");
             prop.load(ip);
 
         } catch (Exception e) {
@@ -41,8 +44,10 @@ public class TestBase {
         }
         else if(BrowserName.equals("chromeheadless")) {
             ChromeOptions chromeOptions = new ChromeOptions();
+          /*  System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+
+                    "/src/main/java/com/qa/demo/data/chromedriver")	;*/
             System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+
-                    "/src/main/java/com/qa/demo/data/chromedriver")	;
+                    "\\src\\main\\java\\com\\qa\\demo\\testdata\\chromedriver.exe")	;
             chromeOptions.addArguments("--headless");
             chromeOptions.addArguments("--disable-gpu");
             chromeOptions.addArguments("--window-size=1920x1080");
