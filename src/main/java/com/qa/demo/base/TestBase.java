@@ -44,10 +44,10 @@ public class TestBase {
         }
         else if(BrowserName.equals("chromeheadless")) {
             ChromeOptions chromeOptions = new ChromeOptions();
-          /*  System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+
-                    "/src/main/java/com/qa/demo/data/chromedriver")	;*/
-            System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+
-                    "\\src\\main\\java\\com\\qa\\demo\\testdata\\chromedriver.exe")	;
+           System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+
+                    "/src/main/java/com/qa/demo/data/chromedriver")	;
+           /* System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+
+                    "\\src\\main\\java\\com\\qa\\demo\\testdata\\chromedriver.exe")	;*/
             chromeOptions.addArguments("--headless");
             chromeOptions.addArguments("--disable-gpu");
             chromeOptions.addArguments("--window-size=1920x1080");
