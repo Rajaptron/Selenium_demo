@@ -47,7 +47,7 @@ public class TestBase {
             /*System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+
                     "/src/main/java/com/qa/demo/data/chromedriver")	;*/
            System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+
-                    "\\src\\main\\java\\com\\qa\\demo\\testdata\\chromedriver.exe")	;
+                    "\\src\\main\\java\\com\\qa\\demo\\data\\chromedriver.exe")	;
             chromeOptions.addArguments("--headless");
             chromeOptions.addArguments("--disable-gpu");
             chromeOptions.addArguments("--window-size=1920x1080");
